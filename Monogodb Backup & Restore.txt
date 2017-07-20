@@ -1,0 +1,19 @@
+ To Backup Monogodb:
+
+Using Command Prompt as Administrator Navigate to Mongodb installed path:
+
+Example Path-- C:\Program Files\MongoDB\Server\3.4\bin
+
+Step 1 : mongodump.exe 
+
+Execute this one.Automattically it will restore all db in this path.
+
+Backup Path-- C:\Program Files\MongoDB\Server\3.4\bin\dump
+
+
+To Restore Monogodb:
+
+Step 1 : mongorestore --db dbname dump/dbname
+
+Example : mongorestore --db PestBusters dump/PestBusters
+
