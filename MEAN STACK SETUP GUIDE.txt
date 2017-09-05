@@ -23,7 +23,7 @@ Step 4:
 	storage:
     		dbPath: E:\MongoDB\data
 
-	Execute the service by running the following command in Command Prompt as administrator: sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe\" --service --config=\"C:\Program Files\MongoDB\Server\3.4\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
+	Execute the service by running the following command in Command Prompt as administrator: sc.exe create MongoDB binPath= "\"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe\" --service --config=\"C:\Program Files\MongoDB\Server\3.4\bin\mongod.cfg\"" DisplayName= "MongoDB" start= "auto"
 
 	Start the service by sending the following command: net start MongoDB
 
