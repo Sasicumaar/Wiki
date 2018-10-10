@@ -1,0 +1,11 @@
+{
+  "dbconfig": {
+    "user": "sa",
+    "password": "Amana@123",
+    "server": "AMANAASIA05/MSSQLSERVER2014",
+    "database": "AdvancerGlobal" 
+  },
+  "AuthSecret": {
+    "secret": "Amanaasia"
+  }
+}
