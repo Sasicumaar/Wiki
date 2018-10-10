@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tamil Selvam",
+  "author": "Sasicumaar",
   "license": "ISC",
   "dependencies": {
     "archiver": "^3.0.0",
