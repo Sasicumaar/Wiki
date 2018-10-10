@@ -1,0 +1,20 @@
+select * from Workforce_Timelog where EmployeeID=135 and ID IN (45703,45979)
+
+update Workforce_Timelog set UpdatedBy='Sasi',UpdatedDate=TimeOut where EmployeeID=135 and ID IN (45703,45979)
+
+
+DECLARE @cmd varchar(4000)
+DECLARE cmds CURSOR FOR
+SELECT 'drop table [' + Table_Name + ']'
+FROM INFORMATION_SCHEMA.TABLES
+WHERE Table_Name LIKE 'prefix%'
+
+OPEN cmds
+WHILE 1 = 1
+BEGIN
+    FETCH cmds INTO @cmd
+    IF @@fetch_status != 0 BREAK
+    EXEC(@cmd)
+END
+CLOSE cmds;
+DEALLOCATE cmds

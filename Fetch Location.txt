@@ -1,0 +1,32 @@
+private static DataSet ReadDataFromJson(String jsonString)
+        {
+            //// Using XML as an interface of deserializing
+            var xd = new XmlDocument();
+
+            //// Note:Json convertor needs a json with one node as root
+            jsonString = "{ \"rootNode\": {" + jsonString.Trim().TrimStart('{').TrimEnd('}') + @"} }";
+            //// Now it is secure that we have always a Json with one node as root 
+            xd = JsonConvert.DeserializeXmlNode(jsonString);
+
+            //// DataSet is able to read from XML and return a proper DataSet
+            var result = new DataSet();
+            result.ReadXml(new XmlNodeReader(xd));
+            return result;
+        }
+
+
+string ApiURL = "us1.locationiq.org/v1/reverse.php?"; 
+                    decimal lat = Convert.ToDecimal(1.360729);
+                    decimal lon =Convert.ToDecimal(103.812522);
+                    string format = "json";
+                    string key = "9efa90e75b90db";
+                      
+                    var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://" + ApiURL + "key="+key+ "&lat="+lat+ "&lon="+lon+ "&format="+ format);
+                    httpWebRequest.ContentType = "application/json";
+                    httpWebRequest.Method = "GET"; 
+                    var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                    {
+                        var result = streamReader.ReadToEnd();
+                        DataSet Data = ReadDataFromJson(result); 
+                    }

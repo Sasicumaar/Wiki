@@ -1,0 +1,30 @@
+Notations
+
+Camal Notation
+Pascal Notation
+
+
+SEt Default value as null by defauilt whereever we reuse
+
+Javascript Kerwords : 
+typeof
+do-while
+Notations
+for in 
+for of
+Escape Notation
+
+cloning of object
+spread operator(...)
+
+`` Email Tamplate Literal
+
+Elements of an array
+
+Functions using Arrow Operator
+
+filter
+
+Arguments in function will available always on passing parameter
+
+Arrow Functions

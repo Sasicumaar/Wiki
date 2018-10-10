@@ -1,0 +1,8 @@
+GIT Commands:
+--------------
+1. To get the updates from server - git clone "URL from git"
+2. To get the updates - git pull
+3. To Commit - type following three commands
+ git add .   (or)  git add -A
+ git commmit -m "type your comments here"
+ git push
