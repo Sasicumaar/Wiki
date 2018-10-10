@@ -1,3 +1,0 @@
-URL: http://ipaddress:8081/iclock/data/iclock/
-Username: admin
-Password: admin
