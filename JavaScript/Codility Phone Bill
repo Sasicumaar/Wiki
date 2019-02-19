@@ -1,0 +1,70 @@
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+
+function solution(S) {
+    // write your code in JavaScript (Node.js 8.9.4)
+ 
+    var newarr=S.split("\n");
+    
+    var output= [];  // It will return total cost with phone number
+    var arrCost= []; 
+    var result = []; 
+    var TotalCost=0;
+    
+    newarr.forEach(function(item) {
+        var Duration=item.split(",")[0];  
+        var PhoneNumber=item.split(",")[1];
+        
+        var hms = Duration;
+        var a = hms.split(':');  
+        var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]); 
+        
+        var minutes = Math.floor(seconds / 60);
+        
+        var cost=0;
+         
+        if(seconds<300){
+            cost=3*seconds; 
+        }
+        else
+        {
+            if(a[2]==00){
+                cost=150 * minutes; 
+            }
+            else{
+                 cost=150 * (minutes+1);
+            }
+            
+        } 
+        
+        // Output.push("Phone Number : " + PhoneNumber + " Total Seconds : " +seconds + " Cost :" +cost); 
+         
+         arrCost.push({PhoneNumber:PhoneNumber,Cost:cost});
+         
+    });
+      
+    //Group By Phone Number
+    arrCost.reduce(function(res, value) {
+        if (!res[value.PhoneNumber]) {
+        res[value.PhoneNumber] = { PhoneNumber: value.PhoneNumber, Cost: 0 };
+        result.push(res[value.PhoneNumber])
+    }
+    res[value.PhoneNumber].Cost += value.Cost;  
+    return res;
+    }, {});
+ 
+    //Find max cost
+     var maxCost= Math.max.apply(Math, result.map(q => q.Cost)); 
+     
+     //Remove max cost object
+     result.splice(result.findIndex(item => item.Cost === maxCost), 1)
+    
+     //Sum other cost
+     result.forEach(function(item) { 
+      TotalCost+=item.Cost;
+      }); 
+       
+   return TotalCost;
+    
+    
+}
