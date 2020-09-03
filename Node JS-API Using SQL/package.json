@@ -30,7 +30,7 @@
     "isodate": "^0.1.4",
     "jade": "^1.11.0",
     "jsonwebtoken": "^8.3.0",
-    "loopback": "^3.8.0",
+    "loopback": "^3.25.1",
     "loopback-boot": "^2.25.0",
     "method-override": "^2.3.8",
     "moment": "^2.18.1",
